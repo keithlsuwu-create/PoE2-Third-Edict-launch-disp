@@ -1,0 +1,9 @@
+{
+  "players_online": 128934,
+  "top_classes": [
+    { "class": "Witch", "count": 43000 },
+    { "class": "Marauder", "count": 31000 },
+    { "class": "Ranger", "count": 27000 }
+  ],
+  "most_used_skill": "Fireball"
+}
