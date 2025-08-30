@@ -1,17 +1,28 @@
-async function loadStats() {
-  const response = await fetch("data/stats.json");
-  const stats = await response.json();
+async function loadLeagues() {
+  try {
+    const response = await fetch("data/leagues.json"); // fetch mock data
+    const data = await response.json();
 
-  document.getElementById("players").textContent = stats.players_online;
+    const statsDiv = document.getElementById("stats");
+    statsDiv.innerHTML = "<h1>PoE2 Available Leagues</h1>";
 
-  const classList = document.getElementById("classes");
-  stats.top_classes.forEach(c => {
-    const li = document.createElement("li");
-    li.textContent = `${c.class}: ${c.count}`;
-    classList.appendChild(li);
-  });
+    const ul = document.createElement("ul");
 
-  document.getElementById("skill").textContent = stats.most_used_skill;
+    data.lines.forEach(league => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${league.name}</strong> 
+                      ${league.startAt ? ` (Start: ${league.startAt}, End: ${league.endAt})` : ""} 
+                      - Characters Created: ${league.charactersCreated.toLocaleString()}`;
+      ul.appendChild(li);
+    });
+
+    statsDiv.appendChild(ul);
+
+  } catch (error) {
+    console.error("Failed to load leagues:", error);
+    document.getElementById("stats").innerHTML = "<p>Failed to load leagues.</p>";
+  }
 }
 
-loadStats();
+loadLeagues();
+

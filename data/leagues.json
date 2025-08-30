@@ -1,0 +1,21 @@
+{
+  "lines": [
+    {
+      "id": 1,
+      "name": "Rise of the Abyssal",
+      "startAt": "2025-08-29",
+      "endAt": "2025-11-29",
+      "charactersCreated": 128934
+    },
+    {
+      "id": 2,
+      "name": "Standard",
+      "charactersCreated": 256789
+    },
+    {
+      "id": 3,
+      "name": "Hardcore",
+      "charactersCreated": 56789
+    }
+  ]
+}

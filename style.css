@@ -16,3 +16,13 @@ h1 {
   background: #1e1e1e;
   border-radius: 10px;
 }
+
+#stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+#stats li {
+  padding: 5px 0;
+  font-size: 16px;
+}
